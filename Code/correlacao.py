@@ -10,17 +10,9 @@ import numpy as np
 from collections import deque
 
 
-MESES = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
-USINAS_PRINCIPAIS = ('FURNAS', 'GBM','SOBRADINHO', 'TUCURUÍ' )
-POSTOS_ = {
-    '6': 'FURNAS',
-    '74': 'GBM',
-    '169': 'SOBRADINHO',
-    '275': 'TUCURUÍ'
-}
 
 #%% classe
-class Vazoes:
+class Correlacao:
     """
     Parâmetros de entrada:
         
@@ -38,6 +30,15 @@ class Vazoes:
         4. Exporta o arquivo vazoes preenchido em txt ou csv 
         
     """
+    MESES = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
+    USINAS_PRINCIPAIS = ('FURNAS', 'GBM','SOBRADINHO', 'TUCURUÍ' )
+    POSTOS_ = {
+        '6': 'FURNAS',
+        '74': 'GBM',
+        '169': 'SOBRADINHO',
+        '275': 'TUCURUÍ'
+    }
+    
     
     def __init__(self,
                  caminho_arquivo: str,
@@ -139,16 +140,16 @@ class Vazoes:
         dados_usinas_selecionada = tabela_auxiliar.groupby("POSTO").get_group(self.posto)
         
         
-        #if self.posto == 6:
-        #    print(USINAS_PRINCIPAIS[0])
-        #elif self.posto == 74:
-        #    print(USINAS_PRINCIPAIS[1])
-        #elif self.posto == 169:
-        #    print(USINAS_PRINCIPAIS[2])
-        #elif self.posto == 275:
-        #    print(USINAS_PRINCIPAIS[3])
-        #else:
-        #    print('Escolha entre as usinas cod:[6, 74, 169, 275]')
+        if self.posto == 6:
+            print(USINAS_PRINCIPAIS[0])
+        elif self.posto == 74:
+            print(USINAS_PRINCIPAIS[1])
+        elif self.posto == 169:
+            print(USINAS_PRINCIPAIS[2])
+        elif self.posto == 275:
+            print(USINAS_PRINCIPAIS[3])
+        else:
+            print('Escolha entre as usinas cod:[6, 74, 169, 275]')
         
         return dados_usinas_selecionada
     

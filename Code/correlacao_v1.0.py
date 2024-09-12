@@ -142,7 +142,7 @@ def series_anos():
 def correlacao():
     r"""Milhões de coisa em uma função.
     
-    .. math:: R_{ij}=\\frac{ C_{ij} }{ \\sqrt{ C_{ii} * C_{jj}}}
+    .. math:: R_{ij}=\frac{ C_{ij} }{ \\sqrt{ C_{ii} * C_{jj}}}
     
     The values of `R` are between -1 and 1, inclusive.
     """
@@ -261,9 +261,9 @@ cod = 6
 mes_previsao = 4
 #------------------------------------------------------------------------------
 
-df_vazao_original = leitura_vazao(caminho)
+#df_vazao_original = leitura_vazao(caminho)
     
-tabela_aux = tabela_auxiliar(mes=mes_previsao)
+#tabela_aux = tabela_auxiliar(mes=mes_previsao)
 
 usina_sel = selecione_usina(cod=cod)
 
